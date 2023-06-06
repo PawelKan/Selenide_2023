@@ -1,14 +1,23 @@
 package configuration;
 
 import com.codeborne.selenide.Configuration;
+import lombok.SneakyThrows;
 
-public class config {
+import java.io.FileInputStream;
+import java.util.Properties;
 
+public class ConfigSelenide {
+
+    @SneakyThrows
     public void setupConfigForBrowser(){
-        Configuration.browser = System.getProperty("browser");
-        Configuration.baseUrl = System.getProperty("baseUrl");
-        Configuration.timeout = Long.parseLong(System.getProperty("timeout"));
-        Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.holdBrowserOpen = Boolean.parseBoolean(System.getProperty("holdBrowserOpen"));
+        Properties prop = new Properties();
+
+        prop.load(new FileInputStream("src/main/resources/envProperties.properties"));
+
+        Configuration.browser = prop.get("browser").toString();
+        Configuration.baseUrl = prop.get("baseUrl").toString();
+        Configuration.timeout = Long.parseLong(prop.get("timeout").toString());
+        Configuration.browserSize = prop.get("browserSize").toString();
+        Configuration.holdBrowserOpen = Boolean.parseBoolean(prop.get("holdBrowserOpen").toString());
     }
 }
