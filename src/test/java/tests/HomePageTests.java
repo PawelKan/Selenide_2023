@@ -1,6 +1,5 @@
 package tests;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.HomePageObj;
