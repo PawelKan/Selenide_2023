@@ -18,6 +18,4 @@ public class HomePageTests extends TestBase{
         homePage.verifySectionContent();
         homePage.verifySectionFooter();
     }
-
-
 }
