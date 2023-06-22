@@ -16,7 +16,6 @@ public class LoginPageTests extends TestBase{
     HomePageObj homePage = new HomePageObj();
     LoginPageObj loginPage = new LoginPageObj();
 
-
     @BeforeMethod
     public void openLoginPage(){ open(Urls.LOGIN_PAGE);    }
     @Test

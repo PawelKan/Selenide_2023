@@ -24,8 +24,4 @@ public class HomePageObj {
         header_LoggedInUserName.shouldHave(Condition.text(textLoggedInUser));
         header_LoggedInUserName.shouldHave(Condition.text(userName));
     }
-
-
-
-
 }

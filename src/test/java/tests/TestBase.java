@@ -10,5 +10,4 @@ public class TestBase {
         ConfigSelenide config = new ConfigSelenide();
         config.setupConfigForBrowser();
     }
-
 }

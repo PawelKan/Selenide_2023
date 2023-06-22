@@ -2,7 +2,6 @@ package pageObjects;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import lombok.Getter;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -17,7 +16,7 @@ public class LoginPageObj {
 
     //Register section
     private SelenideElement header_NewUserSignup = $(".signup-form > h2");
-    private SelenideElement txt_RegisterUser = $("input[data-qa=\"signup-name\"]");
+    private SelenideElement txt_RegisterUserName = $("input[data-qa=\"signup-name\"]");
     private SelenideElement txt_RegisterEmailAddress = $("input[data-qa=\"signup-email\"]");
     private SelenideElement btn_Signup = $("button[data-qa=\"signup-button\"]");
 
@@ -35,7 +34,7 @@ public class LoginPageObj {
         header_NewUserSignup.shouldBe(visible);
         header_NewUserSignup.shouldHave(Condition.text(textForNewUserSignupHeader));
 
-        txt_RegisterUser.shouldBe(visible);
+        txt_RegisterUserName.shouldBe(visible);
         txt_RegisterEmailAddress.shouldBe(visible);
         btn_Signup.shouldBe(visible);
     }
@@ -49,4 +48,13 @@ public class LoginPageObj {
         btn_Login.click();
     }
 
+    public void registerUserLoginPage(String email, String name){
+        txt_RegisterEmailAddress.clear();
+        txt_RegisterEmailAddress.sendKeys(email);
+
+        txt_RegisterUserName.clear();
+        txt_RegisterUserName.sendKeys(name);
+    }
+
+    public void clickOnSignupButton() { btn_Signup.click();}
 }
