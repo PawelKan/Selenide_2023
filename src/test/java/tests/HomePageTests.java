@@ -2,17 +2,16 @@ package tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageObjects.HeaderSectionPageObj;
-import pageObjects.HomePageObj;
-import pageObjects.LoginPageObj;
+import pageObjects.*;
 import testData.Users;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class HomePageTests extends TestBase{
 
-    HomePageObj homePage = new HomePageObj();
-    HeaderSectionPageObj headerSection = new HeaderSectionPageObj();
+    HomePageHeaderSectionObj headerSection = new HomePageHeaderSectionObj();
+    HomePageContentSectionObj contentSection = new HomePageContentSectionObj();
+    HomePageFooterSectionObj footerSection = new HomePageFooterSectionObj();
     LoginPageObj loginPage = new LoginPageObj();
 
     @BeforeMethod
@@ -21,8 +20,8 @@ public class HomePageTests extends TestBase{
     @Test
     public void verifyHomePageHeaderContentFooterSections(){
         headerSection.verifySectionHeaderForNotLoggedInUser();
-        homePage.verifySectionContent();
-        homePage.verifySectionFooter();
+        contentSection.verifySectionContent();
+        footerSection.verifySectionFooter();
     }
 
     @Test

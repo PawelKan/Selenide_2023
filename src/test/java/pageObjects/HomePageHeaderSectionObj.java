@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class HeaderSectionPageObj {
+public class HomePageHeaderSectionObj {
 
     private SelenideElement sectionHeader = $("#header");
 

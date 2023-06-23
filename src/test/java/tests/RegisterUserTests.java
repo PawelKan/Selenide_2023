@@ -13,7 +13,7 @@ public class RegisterUserTests extends TestBase {
     LoginPageObj onLoginPage = new LoginPageObj();
     RegisterPageObj onRegisterPage = new RegisterPageObj();
     //HomePageObj homePage = new HomePageObj();
-    HeaderSectionPageObj onPageHeader = new HeaderSectionPageObj();
+    HomePageHeaderSectionObj onPageHeader = new HomePageHeaderSectionObj();
     RegistrationSuccessPageObj onRegistrationSuccessPageObj = new RegistrationSuccessPageObj();
     DeleteUserSuccessPageObj onDeleteUserSuccessPage = new DeleteUserSuccessPageObj();
 
