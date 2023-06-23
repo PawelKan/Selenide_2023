@@ -65,7 +65,7 @@ public class DataForUserRegistration {
                  .email(faker.internet().emailAddress())
                  .pass("Test1234")
                  .dobDay(faker.random().nextInt(1,29).toString())
-                 .dobMonth(faker.random().nextInt(1,13).toString())
+                 .dobMonth(faker.random().nextInt(1,12).toString())
                  .dobYear(faker.random().nextInt(1980,2000).toString())
                  .firstName(faker.name().firstName())
                  .lastName(faker.name().lastName())

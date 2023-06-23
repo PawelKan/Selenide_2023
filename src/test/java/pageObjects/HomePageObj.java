@@ -15,6 +15,7 @@ public class HomePageObj {
     private SelenideElement sectionContent = $("body > section:nth-child(3)");
     private SelenideElement sectionFooter = $("#footer");
     private SelenideElement header_LoggedInUserName = $("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(10) > a");
+    private SelenideElement header_btnDeleteUser = $("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(5) > a");
     private String textLoggedInUser = " Logged in as ";
 
     public void verifySectionHeader(){ getSectionHeader().shouldBe(Condition.visible); }
@@ -24,4 +25,6 @@ public class HomePageObj {
         header_LoggedInUserName.shouldHave(Condition.text(textLoggedInUser));
         header_LoggedInUserName.shouldHave(Condition.text(userName));
     }
+
+    public void clickDeleteUserAccount(){ header_btnDeleteUser.click(); }
 }
