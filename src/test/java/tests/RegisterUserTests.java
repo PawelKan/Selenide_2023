@@ -36,9 +36,11 @@ public class RegisterUserTests extends TestBase {
 
         registerPage.clickOnCreateAccount();
 
+        registrationSuccessPageObj.verifyPageElements();
         registrationSuccessPageObj.clickBtnContinue();
 
         homePage.clickDeleteUserAccount();
+        deleteUserSuccessPage.verifyPageElements();
 
         deleteUserSuccessPage.clickBtnContinue();
     }
