@@ -10,38 +10,37 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class RegisterUserTests extends TestBase {
 
-    LoginPageObj loginPage = new LoginPageObj();
-    RegisterPageObj registerPage = new RegisterPageObj();
+    LoginPageObj onLoginPage = new LoginPageObj();
+    RegisterPageObj onRegisterPage = new RegisterPageObj();
+    //HomePageObj homePage = new HomePageObj();
+    HomePageHeaderSectionObj onPageHeader = new HomePageHeaderSectionObj();
+    RegistrationSuccessPageObj onRegistrationSuccessPageObj = new RegistrationSuccessPageObj();
+    DeleteUserSuccessPageObj onDeleteUserSuccessPage = new DeleteUserSuccessPageObj();
 
-    HomePageObj homePage = new HomePageObj();
-    RegistrationSuccessPageObj registrationSuccessPageObj = new RegistrationSuccessPageObj();
-
-    DeleteUserSuccessPageObj deleteUserSuccessPage = new DeleteUserSuccessPageObj();
-
-    DataForUserRegistration registerUserData;
+    DataForUserRegistration onRegisterUserData;
 
     @BeforeClass
     public void setupDataForTest(){
-        registerUserData = DataForUserRegistration.dataForAllRegistrationFormFields();
+        onRegisterUserData = DataForUserRegistration.dataForAllRegistrationFormFields();
     }
     @Test
     public void registerNewUserAndDeleteItAfterSuccessfullRegistration(){
         open(Urls.LOGIN_PAGE);
 
-        loginPage.registerUserLoginPage(registerUserData.getEmail(), registerUserData.getName());
+        onLoginPage.registerUserLoginPage(onRegisterUserData.getEmail(), onRegisterUserData.getName());
 
-        loginPage.clickOnSignupButton();
+        onLoginPage.clickOnSignupButton();
 
-        registerPage.fillAllRegistrationFieldsWithData(registerUserData);
+        onRegisterPage.fillAllRegistrationFieldsWithData(onRegisterUserData);
 
-        registerPage.clickOnCreateAccount();
+        onRegisterPage.clickOnCreateAccount();
 
-        registrationSuccessPageObj.verifyPageElements();
-        registrationSuccessPageObj.clickBtnContinue();
+        onRegistrationSuccessPageObj.verifyPageElements();
+        onRegistrationSuccessPageObj.clickBtnContinue();
 
-        homePage.clickDeleteUserAccount();
-        deleteUserSuccessPage.verifyPageElements();
+        onPageHeader.clickDeleteUserAccount();
+        onDeleteUserSuccessPage.verifyPageElements();
 
-        deleteUserSuccessPage.clickBtnContinue();
+        onDeleteUserSuccessPage.clickBtnContinue();
     }
 }

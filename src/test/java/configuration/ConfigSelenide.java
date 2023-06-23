@@ -2,6 +2,7 @@ package configuration;
 
 import com.codeborne.selenide.Configuration;
 import lombok.SneakyThrows;
+import org.testng.internal.ConfigurationGroupMethods;
 
 import java.io.FileInputStream;
 import java.util.Properties;
