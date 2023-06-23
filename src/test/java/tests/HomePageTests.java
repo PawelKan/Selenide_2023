@@ -23,7 +23,6 @@ public class HomePageTests extends TestBase{
         contentSection.verifySectionContent();
         footerSection.verifySectionFooter();
     }
-
     @Test
     public void verifyHeaderForLoggedInUser(){
         headerSection.clickSignupLoginBtn();

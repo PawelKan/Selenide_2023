@@ -24,8 +24,10 @@ public class LoginPageTests extends TestBase{
     }
 
     @Test
-    public void verifyUserIsAbleToLoginIntoApp(){
+    public void verifyUserIsAbleToLoginAndLogoutFromTheApp(){
         loginPage.loginAsUser(Users.VALID_USER_EMAIL, Users.VALID_USER_PASS);
         headerSection.verifyUserNameIsVisibleInHeaderAfterLogin(Users.VALID_USER_NAME);
+        headerSection.clickLogoutBtn();
+        headerSection.verifySectionHeaderForNotLoggedInUser();
     }
 }
