@@ -2,8 +2,7 @@ package tests;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObjects.LoginPageObj;
-import pageObjects.RegisterPageObj;
+import pageObjects.*;
 import testData.DataForUserRegistration;
 import utils.Urls;
 
@@ -13,6 +12,12 @@ public class RegisterUserTests extends TestBase {
 
     LoginPageObj loginPage = new LoginPageObj();
     RegisterPageObj registerPage = new RegisterPageObj();
+
+    HomePageObj homePage = new HomePageObj();
+    RegistrationSuccessPageObj registrationSuccessPageObj = new RegistrationSuccessPageObj();
+
+    DeleteUserSuccessPageObj deleteUserSuccessPage = new DeleteUserSuccessPageObj();
+
     DataForUserRegistration registerUserData;
 
     @BeforeClass
@@ -20,7 +25,7 @@ public class RegisterUserTests extends TestBase {
         registerUserData = DataForUserRegistration.dataForAllRegistrationFormFields();
     }
     @Test
-    public void registerNewUser(){
+    public void registerNewUserAndDeleteItAfterSuccessfullRegistration(){
         open(Urls.LOGIN_PAGE);
 
         loginPage.registerUserLoginPage(registerUserData.getEmail(), registerUserData.getName());
@@ -30,5 +35,13 @@ public class RegisterUserTests extends TestBase {
         registerPage.fillAllRegistrationFieldsWithData(registerUserData);
 
         registerPage.clickOnCreateAccount();
+
+        registrationSuccessPageObj.verifyPageElements();
+        registrationSuccessPageObj.clickBtnContinue();
+
+        homePage.clickDeleteUserAccount();
+        deleteUserSuccessPage.verifyPageElements();
+
+        deleteUserSuccessPage.clickBtnContinue();
     }
 }
