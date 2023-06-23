@@ -2,7 +2,9 @@ package pageObjects;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import textsOnPages.EN_LoginPageTexts;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -20,19 +22,18 @@ public class LoginPageObj {
     private SelenideElement txt_RegisterEmailAddress = $("input[data-qa=\"signup-email\"]");
     private SelenideElement btn_Signup = $("button[data-qa=\"signup-button\"]");
 
-    private String textForLoginToYourAccountHeader = "Login to your account";
-    private String textForNewUserSignupHeader = "New User Signup!";
+
 
     public void verifyLoginPageElements(){
         header_LoginToYourAccount.shouldBe(visible);
-        header_LoginToYourAccount.shouldHave(Condition.text(textForLoginToYourAccountHeader));
+        header_LoginToYourAccount.shouldHave(text(EN_LoginPageTexts.textForLoginToYourAccountHeader));
 
         txt_LoginEmailAddress.shouldBe(visible);
         txt_LoginPassword.shouldBe(visible);
         btn_Login.shouldBe(visible);
 
         header_NewUserSignup.shouldBe(visible);
-        header_NewUserSignup.shouldHave(Condition.text(textForNewUserSignupHeader));
+        header_NewUserSignup.shouldHave(text(EN_LoginPageTexts.textForNewUserSignupHeader));
 
         txt_RegisterUserName.shouldBe(visible);
         txt_RegisterEmailAddress.shouldBe(visible);
