@@ -66,7 +66,6 @@ public class RegisterPageObj {
     public void setZipcode (String text) { txt_Zipcode.sendKeys(text);}
     public void setMobileNumber (String mobileNumber) { txt_MobilNumber.sendKeys(mobileNumber);}
     public void clickOnCreateAccount(){ btn_CreateAccount.click();}
-
     public void fillAllRegistrationFieldsWithData(DataForUserRegistration registerUserData){
         setTitle(registerUserData.getIsMale());
         setPass(registerUserData.getPass());
