@@ -1,6 +1,5 @@
 package pageObjects;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Value;
 import textsOnPages.EN_RegistrationUserSuccessPageTexts;
@@ -20,9 +19,9 @@ public class RegistrationSuccessPageObj {
     public void clickBtnContinue(){ btnClick.click(); }
 
     public void verifyPageElements(){
-        btnClick.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.btnContinueText));
-        labHeader.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.header));
-        labFirstParagraph.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.firstParagraph));
-        labSecondParagraph.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.secondParagraph));
+        btnClick.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.BTN_CONTINUE_TEXT));
+        labHeader.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.HEADER));
+        labFirstParagraph.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.FIRST_PARAGRAPH));
+        labSecondParagraph.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.SECOND_PARAGRAPH));
     }
 }

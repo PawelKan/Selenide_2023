@@ -3,7 +3,6 @@ package pageObjects;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Value;
 import textsOnPages.EN_DeleteUserSuccessPageTexts;
-import textsOnPages.EN_RegistrationUserSuccessPageTexts;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
@@ -18,10 +17,10 @@ public class DeleteUserSuccessPageObj {
 
     public void clickBtnContinue(){ btnClick.click(); }
     public void verifyPageElements(){
-        btnClick.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.btnContinueText));
-        labHeader.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.header));
-        labFirstParagraph.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.firstParagraph));
-        labSecondParagraph.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.secondParagraph));
+        btnClick.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.BTN_CONTINUE_TEXT));
+        labHeader.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.HEADER));
+        labFirstParagraph.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.FIRST_PARAGRAPH));
+        labSecondParagraph.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.SECOND_PARAGRAPH));
     }
 
 

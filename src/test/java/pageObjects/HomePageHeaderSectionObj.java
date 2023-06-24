@@ -32,14 +32,14 @@ public class HomePageHeaderSectionObj {
 
     public void verifySectionHeaderForNotLoggedInUser(){
         sectionHeader.shouldBe(visible);
-        btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerHome));
-        btnProducts.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerProducts));
-        btnCart.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerCart));
-        btnNotLoggedInSignupLogin.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerSignupLoginForNotLoggedIn));
-        btnTestCases.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerTestCases));
-        btnAPITesting.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerApiTesting));
-        btnVideoTutorials.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerVideoTutorials));
-        btnContactUs.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerContactUs));
+        btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_HOME));
+        btnProducts.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_PRODUCTS));
+        btnCart.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_CART));
+        btnNotLoggedInSignupLogin.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_SIGNUP_LOGIN_FOR_NOT_LOGGED_IN));
+        btnTestCases.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_TEST_CASES));
+        btnAPITesting.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_API_TESTING));
+        btnVideoTutorials.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_VIDEO_TUTORIALS_));
+        btnContactUs.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_CONTACT_US));
 
         btnLoggedInUserName.shouldNotBe(visible);
         btnLoggedInDeleteUser.shouldNotBe(visible);
@@ -47,23 +47,23 @@ public class HomePageHeaderSectionObj {
     }
     public void verifySectionHeaderForLoggedInUser(){
         sectionHeader.shouldBe(visible);
-        btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerHome));
-        btnProducts.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerProducts));
+        btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_HOME));
+        btnProducts.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_PRODUCTS));
         btnLoggedInLogout.shouldBe(visible);
-        btnCart.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerCart));
-        btnLoggedInUserName.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerLoggedIn));
-        btnLoggedInDeleteUser.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerDeleteAccountForLoggedUser));
-        btnTestCases.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerTestCases));
-        btnAPITesting.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerApiTesting));
-        btnVideoTutorials.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerVideoTutorials));
-        btnContactUs.shouldBe(visible).shouldHave(text(EN_HomePageTexts.headerContactUs));
+        btnCart.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_CART));
+        btnLoggedInUserName.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_LOGGED_IN));
+        btnLoggedInDeleteUser.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_DELETE_ACCOUNT_FOR_LOGGED_USER));
+        btnTestCases.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_TEST_CASES));
+        btnAPITesting.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_API_TESTING));
+        btnVideoTutorials.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_VIDEO_TUTORIALS_));
+        btnContactUs.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_CONTACT_US));
 
         btnNotLoggedInSignupLogin.shouldNot(exist);
     }
 
 
     public void verifyUserNameIsVisibleInHeaderAfterLogin(String userName){
-        btnLoggedInUserName.shouldHave(text(EN_HomePageTexts.headerLoggedIn));
+        btnLoggedInUserName.shouldHave(text(EN_HomePageTexts.HEADER_LOGGED_IN));
         btnLoggedInUserName.shouldHave(text(userName));
     }
 
