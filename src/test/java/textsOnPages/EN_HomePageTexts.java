@@ -1,6 +1,7 @@
 package textsOnPages;
 
 public class EN_HomePageTexts {
+    public final static String TITLE = "Automation Exercise";
 
     //region HEADER TEXTS REGION
     public final static String HEADER_HOME = "Home";

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class ContactUsPageObj {
+public class ContactUsPageObj extends BasePage {
 
     private final SelenideElement headerContactUs = $(".col-sm-12 h2");
     //region Contac Us Form
@@ -27,6 +27,8 @@ public class ContactUsPageObj {
     private final SelenideElement paragraphThree_FeedbackForUs = $("div address p:nth-child(5)");
     private final SelenideElement paragraphFour_FeedbackForUs = $("div address p:nth-child(7)");
     //endregion
+    private final SelenideElement alertForSuccessMessage = $(".contact-form div.alert-success");
+    private final SelenideElement btnBackToHomePage = $("a.btn.btn-success");
 
     public void verifyContactUsPage(){
         headerContactUs.shouldHave(text(EN_ContactUsPageTexts.HEADER_CONTACT_US));
@@ -45,4 +47,5 @@ public class ContactUsPageObj {
         paragraphThree_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_THIRD_PARAGRAPH));
         paragraphFour_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_LAST_PARAGRAPH));
     }
+
 }
