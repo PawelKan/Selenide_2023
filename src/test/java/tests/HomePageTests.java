@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class HomePageTests extends TestBase{
 
     HomePageHeaderSectionObj headerSection = new HomePageHeaderSectionObj();
-    HomePage_LestSidebarSectionObj leftSidebarSection = new HomePage_LestSidebarSectionObj();
+    HomePageLeftSidebarSectionObj leftSidebarSection = new HomePageLeftSidebarSectionObj();
     HomePageContentSectionObj contentSection = new HomePageContentSectionObj();
     HomePageFooterSectionObj footerSection = new HomePageFooterSectionObj();
     LoginPageObj loginPage = new LoginPageObj();

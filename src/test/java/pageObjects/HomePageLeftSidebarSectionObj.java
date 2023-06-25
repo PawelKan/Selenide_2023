@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 @Getter
-public class HomePage_LestSidebarSectionObj {
+public class HomePageLeftSidebarSectionObj {
 
     private final SelenideElement header_Category = $(".left-sidebar > h2");
 
