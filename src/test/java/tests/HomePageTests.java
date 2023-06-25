@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class HomePageTests extends TestBase{
 
     HomePageHeaderSectionObj headerSection = new HomePageHeaderSectionObj();
+    HomePage_LestSidebarSectionObj leftSidebarSection = new HomePage_LestSidebarSectionObj();
     HomePageContentSectionObj contentSection = new HomePageContentSectionObj();
     HomePageFooterSectionObj footerSection = new HomePageFooterSectionObj();
     LoginPageObj loginPage = new LoginPageObj();
@@ -29,4 +30,11 @@ public class HomePageTests extends TestBase{
         loginPage.loginAsUser(Users.VALID_USER_EMAIL, Users.VALID_USER_PASS);
         headerSection.verifySectionHeaderForLoggedInUser();
     }
+
+    @Test
+    public void verifyLeftSidebarCategoryAndBrands(){
+        leftSidebarSection.verifyLeftSidebarCategory();
+        leftSidebarSection.verifyLeftSidebarBrands();
+    }
+
 }
