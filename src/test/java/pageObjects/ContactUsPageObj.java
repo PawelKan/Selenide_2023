@@ -17,7 +17,7 @@ public class ContactUsPageObj extends BasePage {
     private final SelenideElement txtEmail = $("[data-qa='email']");
     private final SelenideElement txtSubject = $("[data-qa='subject']");
     private final SelenideElement txtYourMessageHere = $("[data-qa='message']");
-    private final SelenideElement btnChooseFile = $("input[name=\"upload_file\"]");
+    private final SelenideElement btnChooseFileUpload = $("input[name=\"upload_file\"]");
     private final SelenideElement btnSubmit = $("[data-qa='submit-button']");
     //endregion
     //region FEEDBACK FOR US section
@@ -38,7 +38,7 @@ public class ContactUsPageObj extends BasePage {
         txtEmail.shouldHave(attribute("placeholder", EN_ContactUsPageTexts.TXT_EMAIL_PLACEHOLDER));
         txtSubject.shouldHave(attribute("placeholder", EN_ContactUsPageTexts.TXT_SUBJECT_PLACEHOLDER));
         txtYourMessageHere.shouldHave(attribute("placeholder", EN_ContactUsPageTexts.TXT_YOUR_MESSAGE_HERE_PLACEHOLDER_));
-        btnChooseFile.shouldBe(visible);
+        btnChooseFileUpload.shouldBe(visible);
         btnSubmit.shouldHave(attribute("value", EN_ContactUsPageTexts.BTN_SUBMIT_VALUE));
 
         headerFeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.HEADER_FEEDBACK_FOR_US));
@@ -47,5 +47,6 @@ public class ContactUsPageObj extends BasePage {
         paragraphThree_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_THIRD_PARAGRAPH));
         paragraphFour_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_LAST_PARAGRAPH));
     }
+
 
 }
