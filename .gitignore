@@ -30,5 +30,8 @@ replay_pid*
 /.idea/misc.xml
 /.idea/vcs.xml
 /.idea/
-/target/
+target/**
 /build/
+/allure-results/
+/allure-report/
+/.allure
