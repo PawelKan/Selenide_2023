@@ -30,4 +30,21 @@ public class LoginPageTests extends TestBase{
         headerSection.clickLogoutBtn();
         headerSection.verifySectionHeaderForNotLoggedInUser();
     }
+
+    @Test
+    public void verifyEmptyFieldDOMProperties(){
+        //Given
+        String expectedText = "Wypełnij to pole.";
+        String propLoginUsername = loginPage.getTxt_LoginEmailAddress().getDomProperty("validationMessage");
+        String propLoginPassword = loginPage.getTxt_LoginPassword().getDomProperty("validationMessage");
+        String propRegisterUsername = loginPage.getTxt_RegisterUserName().getDomProperty("validationMessage");
+        String propRegisterEmailAddress = loginPage.getTxt_RegisterEmailAddress().getDomProperty("validationMessage");
+        //When
+        headerSection.clickSignupLoginBtn();
+        //Then
+        Assert.assertEquals(propLoginUsername, expectedText);
+        Assert.assertEquals(propLoginPassword, expectedText);
+        Assert.assertEquals(propRegisterUsername, expectedText);
+        Assert.assertEquals(propRegisterEmailAddress, expectedText);
+    }
 }
