@@ -32,7 +32,7 @@ public class LoginPageTests extends TestBase{
     }
 
     @Test
-    public void verifyEmptyFieldDOMProperties(){
+    public void verifyEmptyFieldProperties(){
         //Given
         String expectedText = "Wypełnij to pole.";
         String propLoginUsername = loginPage.getTxt_LoginEmailAddress().getDomProperty("validationMessage");
