@@ -1,6 +1,7 @@
 package pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import textsOnPages.EN_ContactUsPageTexts;
 
@@ -11,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class ContactUsPageObj extends BasePage {
 
     private final SelenideElement headerContactUs = $(".col-sm-12 h2");
-    //region Contac Us Form
+    //region Contact Us Form
     private final SelenideElement headerGetInTouch = $(".contact-form h2");
     private final SelenideElement txtName = $("[data-qa='name']");
     private final SelenideElement txtEmail = $("[data-qa='email']");
@@ -30,7 +31,8 @@ public class ContactUsPageObj extends BasePage {
     private final SelenideElement alertForSuccessMessage = $(".contact-form div.alert-success");
     private final SelenideElement btnBackToHomePage = $("a.btn.btn-success");
 
-    public void verifyContactUsPage(){
+    @Step("Contact Us - Verify page elements")
+    public void verifyContactUsPage() {
         headerContactUs.shouldHave(text(EN_ContactUsPageTexts.HEADER_CONTACT_US));
 
         headerGetInTouch.shouldHave(text(EN_ContactUsPageTexts.HEADER_GET_IN_TOUCH));
@@ -47,6 +49,4 @@ public class ContactUsPageObj extends BasePage {
         paragraphThree_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_THIRD_PARAGRAPH));
         paragraphFour_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_LAST_PARAGRAPH));
     }
-
-
 }

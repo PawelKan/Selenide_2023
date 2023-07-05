@@ -1,6 +1,7 @@
 package pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import textsOnPages.EN_LoginPageTexts;
 
@@ -9,7 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class LoginPageObj {
+public class LoginPageObj extends BasePage {
 
     //Login Section
     private SelenideElement header_LoginToYourAccount = $(".login-form > h2");
@@ -24,7 +25,8 @@ public class LoginPageObj {
     private SelenideElement btn_Signup = $("button[data-qa=\"signup-button\"]");
     private SelenideElement errorMsg_EmailAlreadyExist = $(".signup-form p");
 
-    public void verifyLoginPageElements(){
+    @Step("Login Page - Verify Login Page elements")
+    public void verifyLoginPageElements() {
         header_LoginToYourAccount.shouldBe(visible);
         header_LoginToYourAccount.shouldHave(text(EN_LoginPageTexts.LOGIN_TO_YOUR_ACCOUNT_HEADER));
 
@@ -39,7 +41,9 @@ public class LoginPageObj {
         txt_RegisterEmailAddress.shouldBe(visible);
         btn_Signup.shouldBe(visible);
     }
-    public void loginAsUser(String userName, String password){
+
+    @Step("Login Page - Login as user {0} {1}")
+    public void loginAsUser(String userName, String password) {
         txt_LoginEmailAddress.clear();
         txt_LoginEmailAddress.sendKeys(userName);
 
@@ -49,7 +53,8 @@ public class LoginPageObj {
         btn_Login.click();
     }
 
-    public void registerUserLoginPage(String email, String name){
+    @Step("Login Page - fill Register User email: {0} and name: {1}")
+    public void registerUserLoginPage(String email, String name) {
         txt_RegisterEmailAddress.clear();
         txt_RegisterEmailAddress.sendKeys(email);
 
@@ -57,5 +62,8 @@ public class LoginPageObj {
         txt_RegisterUserName.sendKeys(name);
     }
 
-    public void clickOnSignupButton() { btn_Signup.click();}
+    @Step
+    public void clickOnSignupButton() {
+        btn_Signup.click();
+    }
 }
