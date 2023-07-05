@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class LoginPageObj extends BasePage{
+public class LoginPageObj extends BasePage {
 
     //Login Section
     private SelenideElement header_LoginToYourAccount = $(".login-form > h2");
@@ -61,6 +61,7 @@ public class LoginPageObj extends BasePage{
         txt_RegisterUserName.clear();
         txt_RegisterUserName.sendKeys(name);
     }
+
     @Step
     public void clickOnSignupButton() {
         btn_Signup.click();

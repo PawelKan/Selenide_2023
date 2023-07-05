@@ -41,5 +41,4 @@ public class HomePageTests extends TestBase {
         leftSidebarSection.verifyLeftSidebarCategory();
         leftSidebarSection.verifyLeftSidebarBrands();
     }
-
 }

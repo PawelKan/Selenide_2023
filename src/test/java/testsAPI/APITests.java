@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class APITests {
 
     @Test(dataProvider = "apiHealthStatusData")
-    public void checkHealthStatusOnPages(String apiEndpoint, Integer expectedStatusCode){
+    public void checkHealthStatusOnPages(String apiEndpoint, Integer expectedStatusCode) {
         Response response = RestAssured.get(apiEndpoint);
 
         Integer responseStatusCode = response.getStatusCode();
@@ -19,7 +19,7 @@ public class APITests {
     }
 
     @DataProvider(name = "apiHealthStatusData")
-    public Object[][] apiHealthStatusData(){
+    public Object[][] apiHealthStatusData() {
         Object[][] testData = {
                 {"https://automationexercise.com/", 200},
                 {"https://automationexercise.com/products", 200},

@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.$;
 public class HomePageHeaderSectionObj extends BasePage {
 
     private SelenideElement sectionHeader = $("#header");
-
     private SelenideElement btnHeaderHome = sectionHeader.find(By.linkText("Home"));
     private SelenideElement btnProducts = sectionHeader.find(By.partialLinkText("Products"));
     private SelenideElement btnCart = sectionHeader.find(By.linkText("Cart"));
@@ -44,6 +43,7 @@ public class HomePageHeaderSectionObj extends BasePage {
         btnLoggedInDeleteUser.shouldNotBe(visible);
         btnLoggedInLogout.shouldNotBe(visible);
     }
+
     @Step("HomePage - Header - Verify for LOGGED IN User")
     public void verifySectionHeaderForLoggedInUser() {
         sectionHeader.shouldBe(visible);
@@ -71,10 +71,12 @@ public class HomePageHeaderSectionObj extends BasePage {
     public void clickSignupLoginBtn() {
         btnNotLoggedInSignupLogin.click();
     }
+
     @Step
     public void clickLogoutBtn() {
         btnLoggedInLogout.click();
     }
+
     @Step
     public void clickDeleteUserAccount() {
         btnLoggedInDeleteUser.click();

@@ -52,7 +52,6 @@ public class ContactUsTests extends TestBase {
             homePageHeader.verifyTitle(EN_HomePageTexts.TITLE);
             homePageHeader.verifyUrl(Urls.HOME_PAGE);
         });
-
     }
 
     @Test
@@ -82,5 +81,4 @@ public class ContactUsTests extends TestBase {
             homePageHeader.verifyUrl(Urls.HOME_PAGE);
         });
     }
-
 }

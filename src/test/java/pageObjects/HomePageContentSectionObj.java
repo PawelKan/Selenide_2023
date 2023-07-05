@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class HomePageContentSectionObj {
 
     private SelenideElement sectionContent = $("body > section:nth-child(3)");
+
     @Step("HomePage - Content - verify section element")
     public void verifySectionContent() {
         getSectionContent().shouldBe(visible);

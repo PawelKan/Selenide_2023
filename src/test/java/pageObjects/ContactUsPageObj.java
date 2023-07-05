@@ -49,6 +49,4 @@ public class ContactUsPageObj extends BasePage {
         paragraphThree_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_THIRD_PARAGRAPH));
         paragraphFour_FeedbackForUs.shouldHave(text(EN_ContactUsPageTexts.FEEDBACK_FOR_US_LAST_PARAGRAPH));
     }
-
-
 }
