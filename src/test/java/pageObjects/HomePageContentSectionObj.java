@@ -2,10 +2,8 @@ package pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
-import org.openqa.selenium.By;
-import textsOnPages.EN_HomePageTexts;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter

@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.*;

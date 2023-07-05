@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class ContactUsPageObj extends BasePage {
 
     private final SelenideElement headerContactUs = $(".col-sm-12 h2");
-    //region Contac Us Form
+    //region Contact Us Form
     private final SelenideElement headerGetInTouch = $(".contact-form h2");
     private final SelenideElement txtName = $("[data-qa='name']");
     private final SelenideElement txtEmail = $("[data-qa='email']");
