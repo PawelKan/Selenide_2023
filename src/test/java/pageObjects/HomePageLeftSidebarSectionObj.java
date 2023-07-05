@@ -72,6 +72,7 @@ public class HomePageLeftSidebarSectionObj {
         btn_KidsSubcategory_Dress.shouldBe(visible).shouldHave(exactText(EN_HomePageTexts.CATEGORY_KIDS_DRESS));
         btn_KidsSubcategory_TopsAndShirts.shouldBe(visible).shouldHave(exactText(EN_HomePageTexts.CATEGORY_KIDS_TOPS_SHIRTS));
     }
+
     public void verifyLeftSidebarBrands() {
         // Check brands
         header_Brands.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_BRANDS));

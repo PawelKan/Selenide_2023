@@ -15,8 +15,11 @@ public class DeleteUserSuccessPageObj {
     SelenideElement labSecondParagraph = $("#form > div > div > div > p:nth-child(3)");
     SelenideElement btnClick = $("[data-qa=continue-button]");
 
-    public void clickBtnContinue(){ btnClick.click(); }
-    public void verifyPageElements(){
+    public void clickBtnContinue() {
+        btnClick.click();
+    }
+
+    public void verifyPageElements() {
         btnClick.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.BTN_CONTINUE_TEXT));
         labHeader.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.HEADER));
         labFirstParagraph.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.FIRST_PARAGRAPH));

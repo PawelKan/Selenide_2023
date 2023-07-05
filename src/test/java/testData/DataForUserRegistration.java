@@ -1,4 +1,5 @@
 package testData;
+
 import com.github.javafaker.Faker;
 import lombok.*;
 
@@ -46,36 +47,36 @@ public class DataForUserRegistration {
     @Default
     Boolean isMale = null;
 
-     public static String getTitle(boolean isMan) {
-         if (isMan == true) {
-             return TITLES[0];
-         } else return TITLES[1];
-     }
+    public static String getTitle(boolean isMan) {
+        if (isMan == true) {
+            return TITLES[0];
+        } else return TITLES[1];
+    }
 
-     public static String getRandomCountry(){
-         Random rand = new Random();
-         int randomIndexNumber = rand.nextInt(COUNTRY_TABLE.length);
-         return COUNTRY_TABLE[randomIndexNumber];
-     }
+    public static String getRandomCountry() {
+        Random rand = new Random();
+        int randomIndexNumber = rand.nextInt(COUNTRY_TABLE.length);
+        return COUNTRY_TABLE[randomIndexNumber];
+    }
 
-     public static DataForUserRegistration dataForAllRegistrationFormFields(){
-         return DataForUserRegistration.builder()
-                 .isMale(true)
-                 .name(faker.name().username())
-                 .email(faker.internet().emailAddress())
-                 .pass("Test1234")
-                 .dobDay(faker.random().nextInt(1,29).toString())
-                 .dobMonth(faker.random().nextInt(1,12).toString())
-                 .dobYear(faker.random().nextInt(1980,2000).toString())
-                 .firstName(faker.name().firstName())
-                 .lastName(faker.name().lastName())
-                 .company(faker.company().name())
-                 .address1(faker.address().streetAddress())
-                 .address2(faker.address().secondaryAddress())
-                 .state(faker.address().state())
-                 .city(faker.address().city())
-                 .zipCode(faker.address().zipCode())
-                 .mobileNumber(faker.phoneNumber().cellPhone())
-                 .build();
-     }
+    public static DataForUserRegistration dataForAllRegistrationFormFields() {
+        return DataForUserRegistration.builder()
+                .isMale(true)
+                .name(faker.name().username())
+                .email(faker.internet().emailAddress())
+                .pass("Test1234")
+                .dobDay(faker.random().nextInt(1, 29).toString())
+                .dobMonth(faker.random().nextInt(1, 12).toString())
+                .dobYear(faker.random().nextInt(1980, 2000).toString())
+                .firstName(faker.name().firstName())
+                .lastName(faker.name().lastName())
+                .company(faker.company().name())
+                .address1(faker.address().streetAddress())
+                .address2(faker.address().secondaryAddress())
+                .state(faker.address().state())
+                .city(faker.address().city())
+                .zipCode(faker.address().zipCode())
+                .mobileNumber(faker.phoneNumber().cellPhone())
+                .build();
+    }
 }

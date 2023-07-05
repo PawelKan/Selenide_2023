@@ -29,44 +29,101 @@ public class RegisterPageObj {
     private SelenideElement txt_MobilNumber = $("[data-qa=\"mobile_number\"]");
     private SelenideElement btn_CreateAccount = $("[data-qa=\"create-account\"]");
 
-    public void setTitle(boolean isMale){
-        if (isMale == true){ rad_TitleMr.click(); }
-        else { rad_titleMrs.click(); }
+    public void setTitle(boolean isMale) {
+        if (isMale == true) {
+            rad_TitleMr.click();
+        } else {
+            rad_titleMrs.click();
+        }
     }
-    public void setName(String text){ txt_name.sendKeys(text); }
-    public void setEmail(String text){ txt_email.sendKeys(text);}
-    public void setPass (String text) { txt_pass.sendKeys(text);}
-    public void setDoBDay (String listValue) { list_dateOfBirthDay.selectOptionByValue(listValue);}
-    public void setDoBMonth (String listValue) { list_dateOfBirthMonth.selectOptionByValue(listValue);}
-    public void setDoBYears (String listValue) { list_dateOfBirthYear.selectOptionByValue(listValue);}
-    public void setNewsletter (boolean isNewsletterOn) {
-        if (isNewsletterOn == true){
+
+    public void setName(String text) {
+        txt_name.sendKeys(text);
+    }
+
+    public void setEmail(String text) {
+        txt_email.sendKeys(text);
+    }
+
+    public void setPass(String text) {
+        txt_pass.sendKeys(text);
+    }
+
+    public void setDoBDay(String listValue) {
+        list_dateOfBirthDay.selectOptionByValue(listValue);
+    }
+
+    public void setDoBMonth(String listValue) {
+        list_dateOfBirthMonth.selectOptionByValue(listValue);
+    }
+
+    public void setDoBYears(String listValue) {
+        list_dateOfBirthYear.selectOptionByValue(listValue);
+    }
+
+    public void setNewsletter(boolean isNewsletterOn) {
+        if (isNewsletterOn == true) {
             chk_Newsletter.click();
             //chk_Newsletter.shouldBe(Condition.selected);
-        }
-        else { chk_Newsletter.shouldNotBe(Condition.selected);
-    }}
-
-    public void setSpecialOffer (boolean isSpecialOfferOn) {
-        if (isSpecialOfferOn == true){
-            chk_SpecialOffers.click();
-            //chk_SpecialOffers.shouldBe(Condition.selected);
-        }
-        else { chk_SpecialOffers.shouldNotBe(Condition.selected);
+        } else {
+            chk_Newsletter.shouldNotBe(Condition.selected);
         }
     }
-    public void setFirstName (String text) { txt_FirstName.sendKeys(text);}
-    public void setLastName (String text) { txt_LastName.sendKeys(text);}
-    public void setCompany (String text) { txt_Company.sendKeys(text);}
-    public void setAddress1 (String text) { txt_Address1.sendKeys(text);}
-    public void setAddress2 (String text) { txt_Address2.sendKeys(text);}
-    public void setCountry (String listValue) { list_Country.selectOptionByValue(listValue);}
-    public void setState (String text) { txt_State.sendKeys(text);}
-    public void setCity (String text) { txt_City.sendKeys(text);}
-    public void setZipcode (String text) { txt_Zipcode.sendKeys(text);}
-    public void setMobileNumber (String mobileNumber) { txt_MobilNumber.sendKeys(mobileNumber);}
-    public void clickOnCreateAccount(){ btn_CreateAccount.click();}
-    public void fillAllRegistrationFieldsWithData(DataForUserRegistration registerUserData){
+
+    public void setSpecialOffer(boolean isSpecialOfferOn) {
+        if (isSpecialOfferOn == true) {
+            chk_SpecialOffers.click();
+            //chk_SpecialOffers.shouldBe(Condition.selected);
+        } else {
+            chk_SpecialOffers.shouldNotBe(Condition.selected);
+        }
+    }
+
+    public void setFirstName(String text) {
+        txt_FirstName.sendKeys(text);
+    }
+
+    public void setLastName(String text) {
+        txt_LastName.sendKeys(text);
+    }
+
+    public void setCompany(String text) {
+        txt_Company.sendKeys(text);
+    }
+
+    public void setAddress1(String text) {
+        txt_Address1.sendKeys(text);
+    }
+
+    public void setAddress2(String text) {
+        txt_Address2.sendKeys(text);
+    }
+
+    public void setCountry(String listValue) {
+        list_Country.selectOptionByValue(listValue);
+    }
+
+    public void setState(String text) {
+        txt_State.sendKeys(text);
+    }
+
+    public void setCity(String text) {
+        txt_City.sendKeys(text);
+    }
+
+    public void setZipcode(String text) {
+        txt_Zipcode.sendKeys(text);
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        txt_MobilNumber.sendKeys(mobileNumber);
+    }
+
+    public void clickOnCreateAccount() {
+        btn_CreateAccount.click();
+    }
+
+    public void fillAllRegistrationFieldsWithData(DataForUserRegistration registerUserData) {
         setTitle(registerUserData.getIsMale());
         setPass(registerUserData.getPass());
         setFirstName(registerUserData.getFirstName());

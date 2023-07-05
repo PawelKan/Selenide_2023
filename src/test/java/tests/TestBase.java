@@ -12,13 +12,13 @@ import org.testng.annotations.BeforeMethod;
 public class TestBase {
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         ConfigSelenide config = new ConfigSelenide();
         config.setupConfigForBrowser();
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         WebDriverRunner.closeWebDriver();
     }
 }

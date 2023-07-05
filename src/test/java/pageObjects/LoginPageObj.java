@@ -24,7 +24,7 @@ public class LoginPageObj {
     private SelenideElement btn_Signup = $("button[data-qa=\"signup-button\"]");
     private SelenideElement errorMsg_EmailAlreadyExist = $(".signup-form p");
 
-    public void verifyLoginPageElements(){
+    public void verifyLoginPageElements() {
         header_LoginToYourAccount.shouldBe(visible);
         header_LoginToYourAccount.shouldHave(text(EN_LoginPageTexts.LOGIN_TO_YOUR_ACCOUNT_HEADER));
 
@@ -39,7 +39,8 @@ public class LoginPageObj {
         txt_RegisterEmailAddress.shouldBe(visible);
         btn_Signup.shouldBe(visible);
     }
-    public void loginAsUser(String userName, String password){
+
+    public void loginAsUser(String userName, String password) {
         txt_LoginEmailAddress.clear();
         txt_LoginEmailAddress.sendKeys(userName);
 
@@ -49,7 +50,7 @@ public class LoginPageObj {
         btn_Login.click();
     }
 
-    public void registerUserLoginPage(String email, String name){
+    public void registerUserLoginPage(String email, String name) {
         txt_RegisterEmailAddress.clear();
         txt_RegisterEmailAddress.sendKeys(email);
 
@@ -57,5 +58,7 @@ public class LoginPageObj {
         txt_RegisterUserName.sendKeys(name);
     }
 
-    public void clickOnSignupButton() { btn_Signup.click();}
+    public void clickOnSignupButton() {
+        btn_Signup.click();
+    }
 }

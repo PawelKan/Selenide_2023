@@ -15,20 +15,23 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.open;
 
-public class ContactUsTests extends TestBase{
+public class ContactUsTests extends TestBase {
 
     ContactUsPageObj onContactUsPage = new ContactUsPageObj();
     HomePageHeaderSectionObj homePageHeader = new HomePageHeaderSectionObj();
 
     @BeforeMethod
-    public void openContactUsPage(){ open(Urls.CONTACT_US_PAGE);    }
+    public void openContactUsPage() {
+        open(Urls.CONTACT_US_PAGE);
+    }
+
     @Test
-    public void verifyContactUsPageElements(){
+    public void verifyContactUsPageElements() {
         onContactUsPage.verifyContactUsPage();
     }
 
     @Test
-    public void sendMessageFromContactUsForm(){
+    public void sendMessageFromContactUsForm() {
         onContactUsPage.getTxtName().setValue(Users.VALID_USER_NAME);
         onContactUsPage.getTxtEmail().setValue(Users.VALID_USER_EMAIL);
         onContactUsPage.getTxtSubject().setValue("Subject Example");
@@ -46,7 +49,7 @@ public class ContactUsTests extends TestBase{
     }
 
     @Test
-    public void TryToUploadFile(){
+    public void TryToUploadFile() {
         File file = new File("./files/FileForTestsContactUs.jpg");
 
         onContactUsPage.getTxtName().setValue(Users.VALID_USER_NAME);

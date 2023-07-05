@@ -11,5 +11,7 @@ public class HomePageFooterSectionObj {
 
     private SelenideElement sectionFooter = $("#footer");
 
-    public void verifySectionFooter(){ getSectionFooter().shouldBe(visible); }
+    public void verifySectionFooter() {
+        getSectionFooter().shouldBe(visible);
+    }
 }

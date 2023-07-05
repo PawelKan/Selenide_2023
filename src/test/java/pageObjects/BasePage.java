@@ -12,11 +12,12 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class BasePage {
 
-    public void verifyUrl(String expectedUrl){
+    public void verifyUrl(String expectedUrl) {
         String currentUrl = WebDriverRunner.url();
         Assert.assertEquals(currentUrl, expectedUrl);
     }
-    public void verifyTitle(String expectedTitle){
+
+    public void verifyTitle(String expectedTitle) {
         String actualTitle = Selenide.title();
         Assert.assertEquals(actualTitle, expectedTitle);
     }

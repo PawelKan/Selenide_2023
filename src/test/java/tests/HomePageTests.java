@@ -7,7 +7,7 @@ import testData.Users;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class HomePageTests extends TestBase{
+public class HomePageTests extends TestBase {
 
     HomePageHeaderSectionObj headerSection = new HomePageHeaderSectionObj();
     HomePageLeftSidebarSectionObj leftSidebarSection = new HomePageLeftSidebarSectionObj();
@@ -16,23 +16,26 @@ public class HomePageTests extends TestBase{
     LoginPageObj loginPage = new LoginPageObj();
 
     @BeforeMethod
-    public void openHomePage(){ open("/");    }
+    public void openHomePage() {
+        open("/");
+    }
 
     @Test
-    public void verifyHomePageHeaderContentFooterSections(){
+    public void verifyHomePageHeaderContentFooterSections() {
         headerSection.verifySectionHeaderForNotLoggedInUser();
         contentSection.verifySectionContent();
         footerSection.verifySectionFooter();
     }
+
     @Test
-    public void verifyHeaderForLoggedInUser(){
+    public void verifyHeaderForLoggedInUser() {
         headerSection.clickSignupLoginBtn();
         loginPage.loginAsUser(Users.VALID_USER_EMAIL, Users.VALID_USER_PASS);
         headerSection.verifySectionHeaderForLoggedInUser();
     }
 
     @Test
-    public void verifyLeftSidebarCategoryAndBrands(){
+    public void verifyLeftSidebarCategoryAndBrands() {
         leftSidebarSection.verifyLeftSidebarCategory();
         leftSidebarSection.verifyLeftSidebarBrands();
     }

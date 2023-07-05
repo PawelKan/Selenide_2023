@@ -26,11 +26,9 @@ public class HomePageHeaderSectionObj extends BasePage {
     private SelenideElement btnLoggedInDeleteUser = sectionHeader.find(By.linkText("Delete Account"));
 
 
-
-
     //private String textLoggedInUser = " Logged in as ";
 
-    public void verifySectionHeaderForNotLoggedInUser(){
+    public void verifySectionHeaderForNotLoggedInUser() {
         sectionHeader.shouldBe(visible);
         btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_HOME));
         btnProducts.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_PRODUCTS));
@@ -45,7 +43,8 @@ public class HomePageHeaderSectionObj extends BasePage {
         btnLoggedInDeleteUser.shouldNotBe(visible);
         btnLoggedInLogout.shouldNotBe(visible);
     }
-    public void verifySectionHeaderForLoggedInUser(){
+
+    public void verifySectionHeaderForLoggedInUser() {
         sectionHeader.shouldBe(visible);
         btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_HOME));
         btnProducts.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_PRODUCTS));
@@ -62,15 +61,22 @@ public class HomePageHeaderSectionObj extends BasePage {
     }
 
 
-    public void verifyUserNameIsVisibleInHeaderAfterLogin(String userName){
+    public void verifyUserNameIsVisibleInHeaderAfterLogin(String userName) {
         btnLoggedInUserName.shouldHave(text(EN_HomePageTexts.HEADER_LOGGED_IN));
         btnLoggedInUserName.shouldHave(text(userName));
     }
 
-    public void clickSignupLoginBtn(){ btnNotLoggedInSignupLogin.click(); }
+    public void clickSignupLoginBtn() {
+        btnNotLoggedInSignupLogin.click();
+    }
 
-    public void clickLogoutBtn() { btnLoggedInLogout.click(); }
-    public void clickDeleteUserAccount(){ btnLoggedInDeleteUser.click(); }
+    public void clickLogoutBtn() {
+        btnLoggedInLogout.click();
+    }
+
+    public void clickDeleteUserAccount() {
+        btnLoggedInDeleteUser.click();
+    }
 
 
 }

@@ -16,9 +16,11 @@ public class RegistrationSuccessPageObj {
     SelenideElement btnClick = $("[data-qa=continue-button]");
 
 
-    public void clickBtnContinue(){ btnClick.click(); }
+    public void clickBtnContinue() {
+        btnClick.click();
+    }
 
-    public void verifyPageElements(){
+    public void verifyPageElements() {
         btnClick.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.BTN_CONTINUE_TEXT));
         labHeader.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.HEADER));
         labFirstParagraph.shouldHave(exactText(EN_RegistrationUserSuccessPageTexts.FIRST_PARAGRAPH));

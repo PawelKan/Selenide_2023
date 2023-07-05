@@ -30,7 +30,7 @@ public class ContactUsPageObj extends BasePage {
     private final SelenideElement alertForSuccessMessage = $(".contact-form div.alert-success");
     private final SelenideElement btnBackToHomePage = $("a.btn.btn-success");
 
-    public void verifyContactUsPage(){
+    public void verifyContactUsPage() {
         headerContactUs.shouldHave(text(EN_ContactUsPageTexts.HEADER_CONTACT_US));
 
         headerGetInTouch.shouldHave(text(EN_ContactUsPageTexts.HEADER_GET_IN_TOUCH));

@@ -24,11 +24,12 @@ public class RegisterUserTests extends TestBase {
     DataForUserRegistration onRegisterUserData;
 
     @BeforeClass
-    public void setupDataForTest(){
+    public void setupDataForTest() {
         onRegisterUserData = DataForUserRegistration.dataForAllRegistrationFormFields();
     }
+
     @Test
-    public void registerNewUserAndDeleteItAfterSuccessfullRegistration(){
+    public void registerNewUserAndDeleteItAfterSuccessfullRegistration() {
         open(Urls.LOGIN_PAGE);
 
         onLoginPage.registerUserLoginPage(onRegisterUserData.getEmail(), onRegisterUserData.getName());
@@ -49,7 +50,7 @@ public class RegisterUserTests extends TestBase {
     }
 
     @Test
-    public void tryToRegisterTheSameUserSecondTime(){
+    public void tryToRegisterTheSameUserSecondTime() {
         open(Urls.LOGIN_PAGE);
         onLoginPage.registerUserLoginPage(Users.VALID_USER_EMAIL, Users.VALID_USER_NAME);
         onLoginPage.clickOnSignupButton();

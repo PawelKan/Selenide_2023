@@ -11,20 +11,23 @@ import utils.Urls;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class LoginPageTests extends TestBase{
+public class LoginPageTests extends TestBase {
 
     LoginPageObj loginPage = new LoginPageObj();
     HomePageHeaderSectionObj headerSection = new HomePageHeaderSectionObj();
 
     @BeforeMethod
-    public void openLoginPage(){ open(Urls.LOGIN_PAGE);    }
+    public void openLoginPage() {
+        open(Urls.LOGIN_PAGE);
+    }
+
     @Test
-    public void verifyLoginPageElementsAreVisible(){
+    public void verifyLoginPageElementsAreVisible() {
         loginPage.verifyLoginPageElements();
     }
 
     @Test
-    public void verifyUserIsAbleToLoginAndLogoutFromTheApp(){
+    public void verifyUserIsAbleToLoginAndLogoutFromTheApp() {
         loginPage.loginAsUser(Users.VALID_USER_EMAIL, Users.VALID_USER_PASS);
         headerSection.verifyUserNameIsVisibleInHeaderAfterLogin(Users.VALID_USER_NAME);
         headerSection.clickLogoutBtn();
@@ -32,7 +35,7 @@ public class LoginPageTests extends TestBase{
     }
 
     @Test
-    public void verifyEmptyFieldProperties(){
+    public void verifyEmptyFieldProperties() {
         //Given
         String expectedText = "Wypełnij to pole.";
         String propLoginUsername = loginPage.getTxt_LoginEmailAddress().getDomProperty("validationMessage");
