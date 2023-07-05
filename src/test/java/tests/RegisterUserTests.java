@@ -1,11 +1,14 @@
 package tests;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.*;
 import testData.DataForUserRegistration;
 import testData.Users;
 import textsOnPages.EN_LoginPageTexts;
+import textsOnPages.EN_RegisterPageTexts;
+import textsOnPages.EN_RegistrationUserSuccessPageTexts;
 import utils.Urls;
 
 import static com.codeborne.selenide.Condition.exactText;
@@ -27,14 +30,17 @@ public class RegisterUserTests extends TestBase {
         onRegisterUserData = DataForUserRegistration.dataForAllRegistrationFormFields();
     }
 
+    @BeforeMethod
+    public void openLoginPage() {
+        open(Urls.LOGIN_PAGE);
+    }
+
     @Test
     public void registerNewUserAndDeleteItAfterSuccessfullRegistration() {
-        open(Urls.LOGIN_PAGE);
-
         onLoginPage.registerUserLoginPage(onRegisterUserData.getEmail(), onRegisterUserData.getName());
 
         onLoginPage.clickOnSignupButton();
-
+        onRegisterPage.verifyTitle(EN_RegisterPageTexts.TITLE);
         onRegisterPage.fillAllRegistrationFieldsWithData(onRegisterUserData);
 
         onRegisterPage.clickOnCreateAccount();
@@ -50,7 +56,6 @@ public class RegisterUserTests extends TestBase {
 
     @Test
     public void tryToRegisterTheSameUserSecondTime() {
-        open(Urls.LOGIN_PAGE);
         onLoginPage.registerUserLoginPage(Users.VALID_USER_EMAIL, Users.VALID_USER_NAME);
         onLoginPage.clickOnSignupButton();
         onLoginPage.getErrorMsg_EmailAlreadyExist().shouldHave(exactText(EN_LoginPageTexts.ERROR_MSG_EMAIL_ALREADY_EXIST));

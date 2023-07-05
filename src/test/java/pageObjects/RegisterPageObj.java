@@ -6,7 +6,7 @@ import testData.DataForUserRegistration;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class RegisterPageObj {
+public class RegisterPageObj extends BasePage {
     private SelenideElement rad_TitleMr = $("#id_gender1");
     private SelenideElement rad_titleMrs = $("#id_gender2");
     private SelenideElement txt_name = $("[data-qa=\"name\"]");

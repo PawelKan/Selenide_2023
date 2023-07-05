@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 @Getter
-public class LoginPageObj {
+public class LoginPageObj extends BasePage{
 
     //Login Section
     private SelenideElement header_LoginToYourAccount = $(".login-form > h2");

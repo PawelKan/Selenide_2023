@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.*;
 import testData.Users;
+import textsOnPages.EN_HomePageTexts;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -21,7 +22,8 @@ public class HomePageTests extends TestBase {
     }
 
     @Test
-    public void verifyHomePageHeaderContentFooterSections() {
+    public void verifyHomePageElements() {
+        headerSection.verifyTitle(EN_HomePageTexts.TITLE);
         headerSection.verifySectionHeaderForNotLoggedInUser();
         contentSection.verifySectionContent();
         footerSection.verifySectionFooter();

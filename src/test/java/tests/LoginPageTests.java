@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePageHeaderSectionObj;
 import pageObjects.LoginPageObj;
 import testData.Users;
+import textsOnPages.EN_LoginPageTexts;
 import utils.Urls;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -22,6 +23,7 @@ public class LoginPageTests extends TestBase {
 
     @Test
     public void verifyLoginPageElementsAreVisible() {
+        loginPage.verifyTitle(EN_LoginPageTexts.TITLE);
         loginPage.verifyLoginPageElements();
     }
 

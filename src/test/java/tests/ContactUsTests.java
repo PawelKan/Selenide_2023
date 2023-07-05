@@ -27,6 +27,7 @@ public class ContactUsTests extends TestBase {
 
     @Test
     public void verifyContactUsPageElements() {
+        onContactUsPage.verifyTitle(EN_ContactUsPageTexts.TITLE);
         onContactUsPage.verifyContactUsPage();
     }
 
