@@ -2,6 +2,7 @@ package pageObjects;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import textsOnPages.EN_HomePageTexts;
@@ -41,19 +42,23 @@ public class HomePageLeftSidebarSectionObj {
     private final SelenideElement btn_BrandsKookieKids = allBrands.get(6);
     private final SelenideElement btn_BrandsBiba = allBrands.get(7);
 
+    @Step
     public void clickOnWomenCategory() {
         btn_CategoryWomen.click();
     }
 
+    @Step
     public void clickOnMenCategory() {
         btn_CategoryMen.click();
     }
 
+    @Step
     public void clickOnKidsCategory() {
         btn_CategoryKids.click();
     }
 
     @SneakyThrows
+    @Step("Home Page - Left Sidebar - Verify Category section")
     public void verifyLeftSidebarCategory() {
         header_Category.shouldBe(visible).shouldHave(exactText(EN_HomePageTexts.HEADER_CATEGORY));
         btn_CategoryWomen.shouldBe(visible).shouldHave(exactText(EN_HomePageTexts.CATEGORY_WOMAN));
@@ -73,6 +78,7 @@ public class HomePageLeftSidebarSectionObj {
         btn_KidsSubcategory_TopsAndShirts.shouldBe(visible).shouldHave(exactText(EN_HomePageTexts.CATEGORY_KIDS_TOPS_SHIRTS));
     }
 
+    @Step("Home Page - Left Sidebar - Verify Brands section")
     public void verifyLeftSidebarBrands() {
         // Check brands
         header_Brands.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_BRANDS));

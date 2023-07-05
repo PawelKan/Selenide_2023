@@ -14,6 +14,7 @@ import java.io.File;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 
 public class ContactUsTests extends TestBase {
 
@@ -32,27 +33,34 @@ public class ContactUsTests extends TestBase {
     }
 
     @Test
-    public void sendMessageFromContactUsForm() {
+    public void sendMessageFromContactUsFormWithoutFile() {
+        //When
         onContactUsPage.getTxtName().setValue(Users.VALID_USER_NAME);
         onContactUsPage.getTxtEmail().setValue(Users.VALID_USER_EMAIL);
         onContactUsPage.getTxtSubject().setValue("Subject Example");
         onContactUsPage.getTxtYourMessageHere().setValue("My Example Message Text");
         onContactUsPage.getBtnSubmit().click();
+        //Then
         Selenide.prompt();
         onContactUsPage.getAlertForSuccessMessage().shouldHave(text(EN_ContactUsPageTexts.MESSAGE_SENT_SUCCESS_ALERT));
         onContactUsPage.verifyTitle(EN_ContactUsPageTexts.TITLE);
         onContactUsPage.verifyUrl(Urls.CONTACT_US_PAGE);
+        //When
         onContactUsPage.getBtnBackToHomePage().click();
+        //Then
+        step("verify home page is visible after click on Home btn", () -> {
+            homePageHeader.verifyTitle(EN_HomePageTexts.TITLE);
+            homePageHeader.verifyUrl(Urls.HOME_PAGE);
+        });
 
-        //verify home page is visible after click on Home btn
-        homePageHeader.verifyTitle(EN_HomePageTexts.TITLE);
-        homePageHeader.verifyUrl(Urls.HOME_PAGE);
     }
 
     @Test
-    public void TryToUploadFile() {
+    public void sendMessageFromContactUsFormWithUploadedFile() {
+        //Given
         File file = new File("./files/FileForTestsContactUs.jpg");
 
+        //When
         onContactUsPage.getTxtName().setValue(Users.VALID_USER_NAME);
         onContactUsPage.getTxtEmail().setValue(Users.VALID_USER_EMAIL);
         onContactUsPage.getTxtSubject().setValue("Subject Example");
@@ -60,15 +68,19 @@ public class ContactUsTests extends TestBase {
         onContactUsPage.getBtnChooseFileUpload().uploadFile(file);
         onContactUsPage.getBtnChooseFileUpload().shouldHave(value("FileForTestsContactUs.jpg"));
         onContactUsPage.getBtnSubmit().click();
+        //Then
         Selenide.prompt();
         onContactUsPage.getAlertForSuccessMessage().shouldHave(text(EN_ContactUsPageTexts.MESSAGE_SENT_SUCCESS_ALERT));
         onContactUsPage.verifyTitle(EN_ContactUsPageTexts.TITLE);
         onContactUsPage.verifyUrl(Urls.CONTACT_US_PAGE);
+        //When
         onContactUsPage.getBtnBackToHomePage().click();
-
+        //Then
         //verify home page is visible after click on Home btn
-        homePageHeader.verifyTitle(EN_HomePageTexts.TITLE);
-        homePageHeader.verifyUrl(Urls.HOME_PAGE);
+        step("verify home page is visible after click on Home btn", () -> {
+            homePageHeader.verifyTitle(EN_HomePageTexts.TITLE);
+            homePageHeader.verifyUrl(Urls.HOME_PAGE);
+        });
     }
 
 }

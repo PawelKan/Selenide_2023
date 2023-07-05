@@ -1,6 +1,7 @@
 package pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import textsOnPages.EN_HomePageTexts;
@@ -27,7 +28,7 @@ public class HomePageHeaderSectionObj extends BasePage {
 
 
     //private String textLoggedInUser = " Logged in as ";
-
+    @Step("HomePage - Header - Verify for NOT LOGGED IN user")
     public void verifySectionHeaderForNotLoggedInUser() {
         sectionHeader.shouldBe(visible);
         btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_HOME));
@@ -43,7 +44,7 @@ public class HomePageHeaderSectionObj extends BasePage {
         btnLoggedInDeleteUser.shouldNotBe(visible);
         btnLoggedInLogout.shouldNotBe(visible);
     }
-
+    @Step("HomePage - Header - Verify for LOGGED IN User")
     public void verifySectionHeaderForLoggedInUser() {
         sectionHeader.shouldBe(visible);
         btnHeaderHome.shouldBe(visible).shouldHave(text(EN_HomePageTexts.HEADER_HOME));
@@ -60,23 +61,22 @@ public class HomePageHeaderSectionObj extends BasePage {
         btnNotLoggedInSignupLogin.shouldNot(exist);
     }
 
-
+    @Step("HomePage - Header - Logged in user NAME is visible")
     public void verifyUserNameIsVisibleInHeaderAfterLogin(String userName) {
         btnLoggedInUserName.shouldHave(text(EN_HomePageTexts.HEADER_LOGGED_IN));
         btnLoggedInUserName.shouldHave(text(userName));
     }
 
+    @Step
     public void clickSignupLoginBtn() {
         btnNotLoggedInSignupLogin.click();
     }
-
+    @Step
     public void clickLogoutBtn() {
         btnLoggedInLogout.click();
     }
-
+    @Step
     public void clickDeleteUserAccount() {
         btnLoggedInDeleteUser.click();
     }
-
-
 }

@@ -1,6 +1,7 @@
 package pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Value;
 import textsOnPages.EN_DeleteUserSuccessPageTexts;
 
@@ -15,10 +16,13 @@ public class DeleteUserSuccessPageObj {
     SelenideElement labSecondParagraph = $("#form > div > div > div > p:nth-child(3)");
     SelenideElement btnClick = $("[data-qa=continue-button]");
 
+
+
+    @Step
     public void clickBtnContinue() {
         btnClick.click();
     }
-
+    @Step("Delete user success page - verify page elements")
     public void verifyPageElements() {
         btnClick.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.BTN_CONTINUE_TEXT));
         labHeader.shouldHave(exactText(EN_DeleteUserSuccessPageTexts.HEADER));

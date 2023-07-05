@@ -2,6 +2,7 @@ package pageObjects;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import testData.DataForUserRegistration;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -37,30 +38,37 @@ public class RegisterPageObj extends BasePage {
         }
     }
 
+    @Step
     public void setName(String text) {
         txt_name.sendKeys(text);
     }
 
+    @Step
     public void setEmail(String text) {
         txt_email.sendKeys(text);
     }
 
+    @Step
     public void setPass(String text) {
         txt_pass.sendKeys(text);
     }
 
+    @Step
     public void setDoBDay(String listValue) {
         list_dateOfBirthDay.selectOptionByValue(listValue);
     }
 
+    @Step
     public void setDoBMonth(String listValue) {
         list_dateOfBirthMonth.selectOptionByValue(listValue);
     }
 
+    @Step
     public void setDoBYears(String listValue) {
         list_dateOfBirthYear.selectOptionByValue(listValue);
     }
 
+    @Step("Register Page - check Newsletter")
     public void setNewsletter(boolean isNewsletterOn) {
         if (isNewsletterOn == true) {
             chk_Newsletter.click();
@@ -70,6 +78,7 @@ public class RegisterPageObj extends BasePage {
         }
     }
 
+    @Step("Register Page - check Special Offer")
     public void setSpecialOffer(boolean isSpecialOfferOn) {
         if (isSpecialOfferOn == true) {
             chk_SpecialOffers.click();
@@ -79,50 +88,62 @@ public class RegisterPageObj extends BasePage {
         }
     }
 
+    @Step
     public void setFirstName(String text) {
         txt_FirstName.sendKeys(text);
     }
 
+    @Step
     public void setLastName(String text) {
         txt_LastName.sendKeys(text);
     }
 
+    @Step
     public void setCompany(String text) {
         txt_Company.sendKeys(text);
     }
 
+    @Step
     public void setAddress1(String text) {
         txt_Address1.sendKeys(text);
     }
 
+    @Step
     public void setAddress2(String text) {
         txt_Address2.sendKeys(text);
     }
 
+    @Step
     public void setCountry(String listValue) {
         list_Country.selectOptionByValue(listValue);
     }
 
+    @Step
     public void setState(String text) {
         txt_State.sendKeys(text);
     }
 
+    @Step
     public void setCity(String text) {
         txt_City.sendKeys(text);
     }
 
+    @Step
     public void setZipcode(String text) {
         txt_Zipcode.sendKeys(text);
     }
 
+    @Step
     public void setMobileNumber(String mobileNumber) {
         txt_MobilNumber.sendKeys(mobileNumber);
     }
 
+    @Step
     public void clickOnCreateAccount() {
         btn_CreateAccount.click();
     }
 
+    @Step("Register Page - Fill registration fields Data")
     public void fillAllRegistrationFieldsWithData(DataForUserRegistration registerUserData) {
         setTitle(registerUserData.getIsMale());
         setPass(registerUserData.getPass());

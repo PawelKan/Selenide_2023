@@ -1,6 +1,7 @@
 package pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import textsOnPages.EN_LoginPageTexts;
 
@@ -24,6 +25,7 @@ public class LoginPageObj extends BasePage{
     private SelenideElement btn_Signup = $("button[data-qa=\"signup-button\"]");
     private SelenideElement errorMsg_EmailAlreadyExist = $(".signup-form p");
 
+    @Step("Login Page - Verify Login Page elements")
     public void verifyLoginPageElements() {
         header_LoginToYourAccount.shouldBe(visible);
         header_LoginToYourAccount.shouldHave(text(EN_LoginPageTexts.LOGIN_TO_YOUR_ACCOUNT_HEADER));
@@ -40,6 +42,7 @@ public class LoginPageObj extends BasePage{
         btn_Signup.shouldBe(visible);
     }
 
+    @Step("Login Page - Login as user {0} {1}")
     public void loginAsUser(String userName, String password) {
         txt_LoginEmailAddress.clear();
         txt_LoginEmailAddress.sendKeys(userName);
@@ -50,6 +53,7 @@ public class LoginPageObj extends BasePage{
         btn_Login.click();
     }
 
+    @Step("Login Page - fill Register User email: {0} and name: {1}")
     public void registerUserLoginPage(String email, String name) {
         txt_RegisterEmailAddress.clear();
         txt_RegisterEmailAddress.sendKeys(email);
@@ -57,7 +61,7 @@ public class LoginPageObj extends BasePage{
         txt_RegisterUserName.clear();
         txt_RegisterUserName.sendKeys(name);
     }
-
+    @Step
     public void clickOnSignupButton() {
         btn_Signup.click();
     }

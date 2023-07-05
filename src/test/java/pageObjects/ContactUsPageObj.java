@@ -1,6 +1,7 @@
 package pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.Getter;
 import textsOnPages.EN_ContactUsPageTexts;
 
@@ -30,6 +31,7 @@ public class ContactUsPageObj extends BasePage {
     private final SelenideElement alertForSuccessMessage = $(".contact-form div.alert-success");
     private final SelenideElement btnBackToHomePage = $("a.btn.btn-success");
 
+    @Step("Contact Us - Verify page elements")
     public void verifyContactUsPage() {
         headerContactUs.shouldHave(text(EN_ContactUsPageTexts.HEADER_CONTACT_US));
 
