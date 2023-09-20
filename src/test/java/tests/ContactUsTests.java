@@ -26,13 +26,14 @@ public class ContactUsTests extends TestBase {
         open(Urls.CONTACT_US_PAGE);
     }
 
-    @Test
+
+    @Test(description = "Contact us - Verify Title and Page Elements")
     public void verifyContactUsPageElements() {
         onContactUsPage.verifyTitle(EN_ContactUsPageTexts.TITLE);
         onContactUsPage.verifyContactUsPage();
     }
 
-    @Test
+    @Test(description = "Contact us - Send message without attached file")
     public void sendMessageFromContactUsFormWithoutFile() {
         //When
         onContactUsPage.getTxtName().setValue(Users.VALID_USER_NAME);
@@ -54,11 +55,10 @@ public class ContactUsTests extends TestBase {
         });
     }
 
-    @Test
+    @Test(description = "Contact us - Send message with attached file")
     public void sendMessageFromContactUsFormWithUploadedFile() {
         //Given
         File file = new File("./files/FileForTestsContactUs.jpg");
-
         //When
         onContactUsPage.getTxtName().setValue(Users.VALID_USER_NAME);
         onContactUsPage.getTxtEmail().setValue(Users.VALID_USER_EMAIL);

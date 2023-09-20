@@ -1,6 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Test Suite">
-    <test name="Test">
+<suite name="AutomationExercisePage">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test name="All Tests">
         <classes>
             <class name="tests.ContactUsTests"/>
             <class name="tests.HomePageTests"/>
