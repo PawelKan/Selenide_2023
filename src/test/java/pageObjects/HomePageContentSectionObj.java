@@ -10,10 +10,17 @@ import static com.codeborne.selenide.Selenide.$;
 @Getter
 public class HomePageContentSectionObj {
 
-    private SelenideElement sectionContent = $("body > section:nth-child(3)");
+    private final SelenideElement sectionContent = $("body > section:nth-child(3)");
+    private final SelenideElement firstProductOnList = $(".choose", 0);
 
     @Step("HomePage - Content - verify section element")
     public void verifySectionContent() {
         getSectionContent().shouldBe(visible);
+    }
+
+    @Step("HomePage - Click on first Product")
+    public void clickOnFirstProductInContentList() {
+        firstProductOnList.shouldBe(visible);
+        firstProductOnList.click();
     }
 }
