@@ -4,7 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.Getter;
 import textsOnPages.EN_PopupProductAddedToCartTexts;
-import textsOnPages.EN_ProductCardPageTexts;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -28,5 +27,8 @@ public class PopupProductAddedToCartObj extends BasePage {
         txt_YourProductHasBeenAddedToCart.shouldBe(visible).shouldHave(exactText(EN_PopupProductAddedToCartTexts.PRODUCT_HAS_BEEN_ADDED_MSG));
         btn_ViewCart.shouldBe(visible).shouldHave(exactText(EN_PopupProductAddedToCartTexts.VIEW_CART));
         btn_ContinueShopping.shouldBe(visible).shouldHave(exactText(EN_PopupProductAddedToCartTexts.CONTINUE_SHOPPING));
+    }
+    public void clickOnViewCart(){
+        btn_ViewCart.click();
     }
 }

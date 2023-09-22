@@ -38,10 +38,9 @@ public class E2EOrders extends TestBase {
         productCard.clickAddToProduct();
         // Add New Page Object for popup after add to basket from card and from homepage
         popUpProductWasAddedToCart.verifyPopupElementsAfterProductWasAddedToCart();
-
         // Go to basket
-
-        // Continue to end order
+        popUpProductWasAddedToCart.clickOnViewCart();
+        // Verify Cart
 
     }
 }
